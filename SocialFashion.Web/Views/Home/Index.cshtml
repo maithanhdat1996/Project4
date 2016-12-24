@@ -1,0 +1,3011 @@
+﻿@model IEnumerable<SocialFashion.Model.Models.GetAllStutusByUserId_Result>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Share/Layout.cshtml";
+}
+
+
+ 
+            
+               
+               
+
+                <div class="joms-body">
+
+
+                    <div class="joms-main joms-main--full">
+
+                        
+                        <!-- dummy comment -->
+                        <div class="joms-postbox" style="display:none;">
+                            <div class="joms-postbox-preview" style="display:none"></div>
+                            <div id="joms-postbox-status" class="joms-postbox-content">
+                                <div class="joms-postbox-tabs"></div>
+                            </div>
+                            <nav class="joms-postbox-tab joms-postbox-tab-root" style="display:none">
+                                <ul class="joms-list inline">
+                                    <li data-tab="status">
+                                        
+                                            
+                                        
+                                        <span class="visible-desktop">Status</span>
+                                    </li>
+                                    <li data-tab="photo">
+                                        
+                                            
+                                        
+                                        <span class="visible-desktop">Photo</span>
+                                    </li>
+                                    <li data-tab="video">
+                                        
+                                            
+                                        
+                                        <span class="visible-desktop">Video</span>
+                                    </li>
+                                    <li data-tab="event">
+                                        
+                                            
+                                        
+                                        <span class="visible-desktop">Event</span>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- User logged than display filterbar -->
+                        <div class="joms-activity-filter clearfix">
+                            <div class="joms-activity-filter-action">
+
+                                <a>
+                                    
+                                        
+                                    
+                                    <span class="joms-gap--inline-small"></span>
+                                    Filtered by
+                                </a>
+                                <span class="joms-activity-filter-status" data-default="All streams">All streams</span>
+                            </div>
+                            <form class="reset-gap">
+                                <ul class="unstyled joms-activity-filter-dropdown joms-postbox-dropdown" style="display: none">
+                                    <li data-filter="all"
+                                        data-url="/?filter=all">
+                                        
+                                            
+                                        
+                                        All streams
+                                    </li>
+                                    <li data-filter="apps" data-value="profile"
+                                        data-url="/?filter=apps&amp;value=profile">
+                                        
+                                            
+                                        
+                                        Status updates
+                                    </li>
+                                    <li data-filter="apps" data-value="photo"
+                                        data-url="/?filter=apps&amp;value=photo">
+                                        
+                                            
+                                        
+                                        Photos
+                                    </li>
+                                    <li data-filter="apps" data-value="video"
+                                        data-url="/?filter=apps&amp;value=video">
+                                        
+                                            
+                                        
+                                        Videos
+                                    </li>
+                                    <li data-filter="apps" data-value="group"
+                                        data-url="/?filter=apps&amp;value=group">
+                                        
+                                            
+                                        
+                                        Groups
+                                    </li>
+                                    <li data-filter="apps" data-value="event"
+                                        data-url="/?filter=apps&amp;value=event">
+                                        
+                                            
+                                        
+                                        Events
+                                    </li>
+                                    <li data-filter="privacy" data-value="me-and-friends"
+                                        data-url="/?filter=privacy&amp;value=me-and-friends">
+                                        
+                                            
+                                        
+                                        My friends & I
+                                    </li>
+                                    <li data-filter="__filter__" data-value="__value__"
+                                        data-url="/?filter=__filter__&amp;value=__value__"
+                                        style="margin-top:20px">
+                                        <div class="joms-select--wrapper" style="margin-bottom:4px">
+                                            <select class="joms-select">
+                                                <option value="keyword">Filter by keyword</option>
+                                                <option value="hashtag">Filter by hashtag</option>
+                                            </select>
+                                        </div>
+                                        <input type="text" class="joms-input" value=""
+                                               placeholder="Enter keyword"
+                                               data-label-keyword="Enter keyword"
+                                               data-label-hashtag="Enter hashtag"
+                                               style="margin-bottom:8px">
+                                        <button class="joms-button--primary joms-button--full"
+                                                data-label-keyword="Search keyword"
+                                                data-label-hashtag="Search hashtag"
+                                                style="margin-bottom:3px">
+                                            Search keyword
+                                        </button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <div class="joms-activity-filter__options" style="text-align:right">
+                                <a href="javascript:" data-ui-object="joms-dropdown-button">
+                                    
+                                        
+                                    
+                                </a>
+                                <ul class="joms-dropdown" style="text-align:left">
+                                    <li class="noselect">
+                                        <strong>Set as default :</strong> &nbsp;
+                                        <img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader" style="visibility:hidden">
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" data-value="all">
+                                            
+                                                
+                                            
+                                            All streams
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" data-value="apps:profile">
+                                            
+                                                
+                                            
+                                            Status updates
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" data-value="apps:photo">
+                                            
+                                                
+                                            
+                                            Photos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" data-value="apps:video">
+                                            
+                                                
+                                            
+                                            Videos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" data-value="apps:group">
+                                            
+                                                
+                                            
+                                            Groups
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" data-value="apps:event">
+                                            
+                                                
+                                            
+                                            Events
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" data-value="privacy:me-and-friends">
+                                            
+                                                
+                                            
+                                            My friends & I
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+
+                            <!-- begin: .joms-stream__wrapper -->
+                            <div class="joms-stream__wrapper">
+
+                                <div class="joms-load-latest joms-js--stream-latest" style="display:none;"></div>
+
+                                <!-- begin: .joms-stream__container -->
+                                <div class="joms-stream__container" data-filter="all" data-filter-value="" data-filterid="0" data-groupid="" data-eventid="" data-profileid="">
+                                    @foreach (var i in Model)
+                                    {
+                                        <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-160 " data-stream-id="160" data-stream-type="profile">
+                                            <div class="joms-stream__header">
+                                                <div class="joms-avatar--stream joms-online">
+                                                    <a href="/demo/profile">
+                                                        <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                    </a>
+                                                </div>
+                                                <div class="joms-stream__meta">
+
+                                                    <a href="/demo/profile" data-joms-username class="joms-stream__user active">@i.UserName</a>
+
+                                                    <a href="/demo/profile?actid=160">
+                                                        <span class="joms-stream__time">
+                                                                @{
+                                                                    int Day = DateTime.Now.Day - i.Date.Day;
+                                                                    int Hour = DateTime.Now.Hour - i.Date.Hour;
+                                                                    int Munite = DateTime.Now.Minute - i.Date.Minute;
+                                                                    int Second = DateTime.Now.Second - i.Date.Second;
+                                                                    int Count = 0;
+                                                                    if (Day != 0)
+                                                                    {
+                                                                        Count++;
+                                                                        <small>@Day day </small>
+                                                                    }
+                                                                    if (Hour != 0)
+                                                                    {
+                                                                        Count++;
+                                                                        <small>@Hour hour </small>
+                                                                    }
+                                                                    if (Munite != 0 && Count < 2)
+                                                                    {
+                                                                        Count++;
+                                                                        <small>@Munite munite </small>
+                                                                    }
+                                                                    if(Second != 0 && Count < 2) 
+                                                                    {
+                                                                        <small>@Second second </small>
+                                                                    }
+                                                                    <small>ago</small>
+                                                                   }
+                                                            <svg viewBox="0 0 16 16" class="joms-icon joms-show-earth">
+                                                                
+                                                            
+                                                        </span>
+                                                    </a>
+                                                </div>
+
+
+                                                <div class="joms-list__options">
+
+                                                    <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                        
+                                                            
+                                                        
+                                                    </a>
+
+                                                    <ul class="joms-dropdown">
+
+
+                                                        <li>
+                                                            <a href="javascript:" >
+                                                                Privacy Setting
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="javascript:" >
+                                                                Hide this stream
+                                                            </a>
+                                                        </li>
+
+
+                                                        <li>
+                                                            <a href="javascript:" >
+                                                                Edit post
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:" >
+                                                                Delete post
+                                                            </a>
+                                                        </li>
+
+
+
+                                                        <li>
+                                                            <a href="javascript:" >
+                                                                Remove Mood
+                                                            </a>
+                                                        </li>
+
+
+                                                    </ul>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="joms-stream__body">
+
+                                                <div data-type="stream-editor" class="cStream-Respond" style="display:none">
+                                                    <textarea class="joms-textarea" style="margin-bottom:0">@i.Content</textarea>
+                                                    <div style="text-align:right;">
+                                                        <button class="joms-button--neutral joms-button--small" >Cancel</button>&nbsp;
+                                                        <button class="joms-button--primary joms-button--small" >Save</button>
+                                                    </div>
+                                                </div>
+
+                                                <p data-type="stream-content">
+                                                    <span class="joms-js--stream-text-160">@i.Content</span>
+                                                </p>
+
+                                                <!-- Fetched data -->
+
+                                            </div>
+
+
+                                            <div class="joms-stream__status--mobile">
+
+
+
+                                                <a href="javascript:" onclick="joms.api.streamShowComments('160');">
+                                                    <span class="joms-comment__counter--160">0</span>
+                                                    
+                                                        <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                    
+                                                </a>
+
+
+                                            </div>
+
+                                            <div class="joms-stream__actions">
+
+                                                <!-- liked -->
+                                                <a href="javascript:"
+                                                   class="joms-button--liked"
+                                                   data-lang-like="Like"
+                                                   data-lang-unlike="Unlike"
+                                                   onclick="joms.api.streamLike('160');">
+                                                    
+                                                        <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                    
+                                                    <span>Like</span>
+                                                </a>
+
+                                                <!-- share -->
+
+                                            </div>
+
+
+
+                                            <div class="joms-comment joms-js--comments joms-js--comments-160" data-id="160">
+
+                                            </div>
+
+                                            <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-160" data-id="160">
+                                                <div class="joms-textarea__wrapper">
+                                                    <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                    <textarea class="joms-textarea" name="comment" data-id="160"
+                                                              placeholder="Add a comment"></textarea>
+                                                    <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea joms-textarea__attachment">
+                                                        <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                        <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                        <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                    </div>
+                                                </div>
+                                                <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                    
+                                                
+                                                <span>
+                                                    <button class="joms-button--comment joms-js--btn-send">
+                                                        Send
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    }
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-201 " data-stream-id="201" data-stream-type="photos">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a class="joms-stream__user" href="/demo/profile">demo</a>
+
+                                                shared 8 photos in the <a href="javascript:" onclick="joms.api.photoOpen('15', '');">Verious pages screen captures</a> album
+                                                <span class="joms-stream__time">
+                                                    <small>2 years ago </small>
+
+                                                    <svg viewBox="0 0 16 16" class="joms-icon joms-show-earth">
+                                                        
+                                                    
+                                                </span>
+                                            </div>
+
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamSelectPrivacy('201');">
+                                                            Privacy Setting
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('201', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('201');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+
+
+                                            <p><span class="joms-js--stream-text-201"></span></p>
+
+
+                                            <div class="joms-media--images">
+                                                <a href="javascript:" onclick="joms.api.photoOpen('15', '103');">
+                                                    <img src="/Content/client/images/photos/69/15/245b1dde34c39e619a6389e2.png" alt="Event page, light green theme">
+                                                </a>
+                                                <a href="javascript:" onclick="joms.api.photoOpen('15', '104');">
+                                                    <img src="/Content/client/images/photos/69/15/5e01d5a38876689c119646f2.png" alt="Events page, blue theme">
+                                                </a>
+                                                <a href="javascript:" onclick="joms.api.photoOpen('15', '105');">
+                                                    <img src="/Content/client/images/photos/69/15/a71eb6d721cce76ec87badc9.png" alt="Events page, light blue theme">
+                                                </a>
+                                                <a href="javascript:" onclick="joms.api.photoOpen('15', '106');">
+                                                    <img src="/Content/client/images/photos/69/15/b60ad6f42ad9e1960097d773.png" alt="Groups page, green theme">
+                                                </a>
+                                                <a href="javascript:" onclick="joms.api.photoOpen('15', '107');">
+                                                    <img src="/Content/client/images/photos/69/15/9e9cbaa5b65d1f0e81bb4090.png" alt="Inbox, brown theme">
+                                                </a>
+                                            </div>
+
+                                            <div class="joms-media--loading">
+                                                <div class="cEmpty small joms-rounded">
+                                                    Photos are being loaded.
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('201');">
+                                                <span class="joms-comment__counter--201">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('201');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-201" data-id="201">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-201" data-id="201">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="201"
+                                                          data-tag-func="album" data-tag-id="15" placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-200 " data-stream-id="200" data-stream-type="photos">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a class="joms-stream__user" href="/demo/profile">demo</a>
+
+                                                shared a photo.
+                                                <span class="joms-stream__time">
+                                                    <small>2 years ago </small>
+
+                                                    <svg viewBox="0 0 16 16" class="joms-icon joms-show-earth">
+                                                        
+                                                    
+                                                </span>
+                                            </div>
+
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamSelectPrivacy('200');">
+                                                            Privacy Setting
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('200', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('200');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+
+
+                                            <p><span class="joms-js--stream-text-200"></span></p>
+
+
+                                            <a href="javascript:" onclick="joms.api.photoOpen('16', '102');">
+                                                <div class="joms-media--image">
+                                                    <img src="/Content/client/images/photos/69/16/79b44982a44efda8187aa91f.jpg" alt="Socialize responsive design." />
+                                                </div>
+                                            </a>
+
+
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('200');">
+                                                <span class="joms-comment__counter--200">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('200');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-200" data-id="200">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-200" data-id="200">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="200"
+                                                          data-tag-func="photo" data-tag-id="102" placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-187 " data-stream-id="187" data-stream-type="photos">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a class="joms-stream__user" href="/demo/profile">demo</a>
+
+                                                shared a photo.
+                                                <span class="joms-stream__time">
+                                                    <small>2 years ago </small>
+
+                                                    <svg viewBox="0 0 16 16" class="joms-icon joms-show-earth">
+                                                        
+                                                    
+                                                </span>
+                                            </div>
+
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamSelectPrivacy('187');">
+                                                            Privacy Setting
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('187', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('187');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+
+
+                                            <p><span class="joms-js--stream-text-187">JomSocial team at work! - <i class="joms-emoticon joms-emo-44" style="background:url(http://socialize.jomsocial.com//Content/client/components/com_community/assets/mood_44.png);background-size:contain;"></i> <b>feeling lucky</b></span></p>
+
+
+                                            <a href="javascript:" onclick="joms.api.photoOpen('19', '82');">
+                                                <div class="joms-media--image">
+                                                    <img src="/Content/client/images/photos/69/19/0a6e4c37d52a9d4c8eab6e81.jpg" alt="" />
+                                                </div>
+                                            </a>
+
+
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowLikes('187', 'popup');">
+                                                <span class="joms-like__counter--187">1</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                            </a>
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('187');">
+                                                <span class="joms-comment__counter--187">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamUnlike('187');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-down"></use>
+                                                
+                                                <span>Unlike</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+                                        <div class="joms-stream__status">
+                                            <a href="javascript:" onclick="joms.api.streamShowLikes('187');">1 person likes this.</a>
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-187" data-id="187">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-187" data-id="187">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="187"
+                                                          data-tag-func="photo" data-tag-id="82" placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-186 " data-stream-id="186" data-stream-type="cover.upload">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a class="joms-stream__user" href="/demo/profile">demo</a>
+                                                has changed the cover of the event, <a href="/jomsocial/all-events/viewevent/7-my-awesome-event">My Awesome Event</a>        <a href="/demo/profile?actid=186">
+                                                    <span class="joms-stream__time">
+                                                        <small>2 years ago </small>
+                                                    </span>
+                                                </a>
+                                            </div>
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('186', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('186');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+                                            <a href="javascript:" onclick="joms.api.photoOpen('32', '81');">
+                                                <div class="joms-media--image">
+                                                    <img src="/Content/client/images/cover/event/7/25b77041c9ce4166e62a251184e440f6.jpg" alt="32">
+                                                </div>
+                                            </a>
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('186');">
+                                                <span class="joms-comment__counter--186">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('186');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-186" data-id="186">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-186" data-id="186">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="186"
+                                                          placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-185 " data-stream-id="185" data-stream-type="cover.upload">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a class="joms-stream__user" href="/demo/profile">demo</a>
+                                                has changed the cover of the event, <a href="/jomsocial/all-events/viewevent/5-socialize-version-4-for-jomsocial-4-launch-party">Socialize Version 4 For JomSocial 4 Launch Party</a>        <a href="/demo/profile?actid=185">
+                                                    <span class="joms-stream__time">
+                                                        <small>2 years ago </small>
+                                                    </span>
+                                                </a>
+                                            </div>
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('185', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('185');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+                                            <a href="javascript:" onclick="joms.api.photoOpen('31', '80');">
+                                                <div class="joms-media--image">
+                                                    <img src="/Content/client/images/cover/event/5/4d3312eb3dc7985cde3da9461b79be00.jpg" alt="31">
+                                                </div>
+                                            </a>
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('185');">
+                                                <span class="joms-comment__counter--185">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('185');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-185" data-id="185">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-185" data-id="185">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="185"
+                                                          placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-184 " data-stream-id="184" data-stream-type="events">
+                                        <div class="joms-list__options">
+
+                                            <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                
+                                                    
+                                                
+                                            </a>
+
+                                            <ul class="joms-dropdown">
+
+
+
+                                                <li>
+                                                    <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('184', '69');">
+                                                        Hide this stream
+                                                    </a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('184');">
+                                                        Delete post
+                                                    </a>
+                                                </li>
+
+
+
+
+
+                                            </ul>
+
+                                        </div>
+
+
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a href="/demo/profile" class="joms-stream__user">demo</a>
+                                                added a new event        <span class="joms-stream__time">
+                                                    <small>
+                                                        2 years ago
+                                                    </small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="joms-stream__body">
+
+                                            <div class="joms-media">
+                                                <h4 class="joms-text--title"><a href="/jomsocial/all-events/viewevent/7-my-awesome-event">My Awesome Event</a></h4>
+                                                <p>Pure awesomeness</p>
+                                                <ul class="joms-list">
+                                                    <li class="joms-list__item">
+                                                        
+                                                            
+                                                        
+                                                        Saturday, 28 February 2015 12:00 AM
+                                                    </li>
+                                                    <li class="joms-list__item">
+                                                        
+                                                            <use xlink:href="http://socialize.jomsocial.com/#joms-icon-location"></use>
+                                                        
+                                                        Ubud Bali
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('184');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-184" data-id="184">
+
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-183 " data-stream-id="183" data-stream-type="cover.upload">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a class="joms-stream__user" href="/demo/profile">demo</a>
+                                                has changed the cover of the event, <a href="/jomsocial/all-events/viewevent/6-jomsocial-4-release-party">JomSocial 4 Release Party</a>        <a href="/demo/profile?actid=183">
+                                                    <span class="joms-stream__time">
+                                                        <small>2 years ago </small>
+                                                    </span>
+                                                </a>
+                                            </div>
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('183', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('183');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+                                            <a href="javascript:" onclick="joms.api.photoOpen('30', '79');">
+                                                <div class="joms-media--image">
+                                                    <img src="/Content/client/images/cover/event/6/c561cf3fe4688553c37595b6897cdaa8.jpg" alt="30">
+                                                </div>
+                                            </a>
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('183');">
+                                                <span class="joms-comment__counter--183">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('183');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-183" data-id="183">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-183" data-id="183">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="183"
+                                                          placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-181 " data-stream-id="181" data-stream-type="events">
+                                        <div class="joms-list__options">
+
+                                            <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                
+                                                    
+                                                
+                                            </a>
+
+                                            <ul class="joms-dropdown">
+
+
+
+                                                <li>
+                                                    <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('181', '69');">
+                                                        Hide this stream
+                                                    </a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('181');">
+                                                        Delete post
+                                                    </a>
+                                                </li>
+
+
+
+
+
+                                            </ul>
+
+                                        </div>
+
+
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a href="/demo/profile" class="joms-stream__user">demo</a>
+                                                added a new event        <span class="joms-stream__time">
+                                                    <small>
+                                                        2 years ago
+                                                    </small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="joms-stream__body">
+
+                                            <div class="joms-media">
+                                                <h4 class="joms-text--title"><a href="/jomsocial/all-events/viewevent/6-jomsocial-4-release-party">JomSocial 4 Release Party</a></h4>
+                                                <p>JomSocial 4 Release Party</p>
+                                                <ul class="joms-list">
+                                                    <li class="joms-list__item">
+                                                        
+                                                            
+                                                        
+                                                        Friday, 15 April 2016 12:00 AM
+                                                    </li>
+                                                    <li class="joms-list__item">
+                                                        
+                                                            <use xlink:href="http://socialize.jomsocial.com/#joms-icon-location"></use>
+                                                        
+                                                        Your Place
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('181');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-181" data-id="181">
+
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-180 " data-stream-id="180" data-stream-type="cover.upload">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a class="joms-stream__user" href="/demo/profile">demo</a>
+                                                has changed the cover of the group, <a href="/jomsocial/all-groups/viewgroup/4-socialize-fans">Socialize Fans</a>        <a href="/demo/profile?actid=180">
+                                                    <span class="joms-stream__time">
+                                                        <small>2 years ago </small>
+                                                    </span>
+                                                </a>
+                                            </div>
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('180', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('180');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+                                            <a href="javascript:" onclick="joms.api.photoOpen('29', '77');">
+                                                <div class="joms-media--image">
+                                                    <img src="/Content/client/images/cover/group/4/47a140a1cc10f6c43b45e1069009fb5f.png" alt="29">
+                                                </div>
+                                            </a>
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('180');">
+                                                <span class="joms-comment__counter--180">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('180');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-180" data-id="180">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-180" data-id="180">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="180"
+                                                          placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-178 " data-stream-id="178" data-stream-type="groups">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a href="/demo/profile" class="joms-stream__user">demo</a>
+                                                <span> created a new group</span>
+                                                <span class="joms-stream__time">
+                                                    2 years ago
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+                                            <div class="joms-media">
+                                                <h4 class="joms-text--title"><a href="/jomsocial/all-groups/viewgroup/4-socialize-fans">Socialize Fans</a></h4>
+                                                <span>Do you love Socialize Template?</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('178');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-178" data-id="178">
+
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-177 " data-stream-id="177" data-stream-type="cover.upload">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a class="joms-stream__user" href="/demo/profile">demo</a>
+                                                has changed the cover of the group, <a href="/jomsocial/all-groups/viewgroup/3-jomsocial-fans">JomSocial Fans</a>        <a href="/demo/profile?actid=177">
+                                                    <span class="joms-stream__time">
+                                                        <small>2 years ago </small>
+                                                    </span>
+                                                </a>
+                                            </div>
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('177', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('177');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+                                            <a href="javascript:" onclick="joms.api.photoOpen('27', '74');">
+                                                <div class="joms-media--image">
+                                                    <img src="/Content/client/images/cover/group/3/8fbdab7a374ad84a1de8f02fdc0925dd.jpg" alt="27">
+                                                </div>
+                                            </a>
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('177');">
+                                                <span class="joms-comment__counter--177">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('177');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-177" data-id="177">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-177" data-id="177">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="177"
+                                                          placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-176 " data-stream-id="176" data-stream-type="groups.avatar.upload">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--comment joms-online">
+                                                <img src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo" data-author="69">
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a href="/demo/profile">demo</a>
+                                                <span>changed <a href="/jomsocial/all-groups/viewgroup/3-jomsocial-fans">JomSocial Fans</a> avatar</span>
+                                                <span class="joms-stream__time"><small>2 years ago </small></span>
+                                            </div>
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('176', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('176');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+                                            <div class="joms-avatar">
+                                                <a href="javascript:" onclick="joms.api.photoZoom('/Content/client/images/avatar/group/55a94f957df3936c4d12f06a.png');">
+                                                    <img src="/Content/client/images/avatar/group/55a94f957df3936c4d12f06a.png" alt="JomSocial Fans">
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('176');">
+                                                <span class="joms-comment__counter--176">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('176');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-176" data-id="176">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-176" data-id="176">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="176"
+                                                          placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-174 " data-stream-id="174" data-stream-type="groups">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a href="/demo/profile" class="joms-stream__user">demo</a>
+                                                <span> created a new group</span>
+                                                <span class="joms-stream__time">
+                                                    2 years ago
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+                                            <div class="joms-media">
+                                                <h4 class="joms-text--title"><a href="/jomsocial/all-groups/viewgroup/3-jomsocial-fans">JomSocial Fans</a></h4>
+                                                <span>Are you a fan of JomSocial? Join here</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('174');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-174" data-id="174">
+
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-173 " data-stream-id="173" data-stream-type="events.wall">
+                                        <div class="joms-list__options">
+
+                                            <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                
+                                                    
+                                                
+                                            </a>
+
+                                            <ul class="joms-dropdown">
+
+
+
+                                                <li>
+                                                    <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('173', '69');">
+                                                        Hide this stream
+                                                    </a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="javascript:" data-propagate="1" onclick="joms.api.streamEdit('173', this);">
+                                                        Edit post
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('173');">
+                                                        Delete post
+                                                    </a>
+                                                </li>
+
+
+
+                                                <li>
+                                                    <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemoveMood('173');">
+                                                        Remove Mood
+                                                    </a>
+                                                </li>
+
+
+                                            </ul>
+
+                                        </div>
+
+
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+
+                                                <a href="/demo/profile" data-joms-username class="joms-stream__user">demo</a>
+                                                <span class="joms-stream__reference">
+                                                    ▶ <a href="/jomsocial/all-events/viewevent/5-socialize-version-4-for-jomsocial-4-launch-party">Socialize Version 4 For JomSocial 4 Launch Party</a>
+                                                </span>
+
+                                                <a href="/jomsocial/all-events/viewevent/5-socialize-version-4-for-jomsocial-4-launch-party?actid=173">
+                                                    <span class="joms-stream__time">
+                                                        <small>2 years ago </small>
+
+                                                    </span>
+                                                </a>
+                                            </div>
+
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('173', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamEdit('173', this);">
+                                                            Edit post
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('173');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemoveMood('173');">
+                                                            Remove Mood
+                                                        </a>
+                                                    </li>
+
+
+                                                </ul>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="joms-stream__body">
+
+                                            <div data-type="stream-editor" class="cStream-Respond" style="display:none">
+                                                <textarea class="joms-textarea" style="margin-bottom:0">Yay!</textarea>
+                                                <div style="text-align:right;">
+                                                    <button class="joms-button--neutral joms-button--small" onclick="joms.view.stream.cancel('173');">Cancel</button>&nbsp;
+                                                    <button class="joms-button--primary joms-button--small" onclick="joms.view.stream.save('173', this);">Save</button>
+                                                </div>
+                                            </div>
+
+                                            <p data-type="stream-content">
+                                                <span class="joms-js--stream-text-173">Yay! - <i class="joms-emoticon joms-emo-19" style="background:url(http://socialize.jomsocial.com//Content/client/components/com_community/assets/mood_19.png);background-size:contain;"></i> <b>feeling happy</b></span>
+                                            </p>
+
+                                            <!-- Fetched data -->
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('173');">
+                                                <span class="joms-comment__counter--173">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('173');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-173" data-id="173">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-173" data-id="173">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="173"
+                                                          placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-172 " data-stream-id="172" data-stream-type="events">
+                                        <div class="joms-list__options">
+
+                                            <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                
+                                                    
+                                                
+                                            </a>
+
+                                            <ul class="joms-dropdown">
+
+
+
+                                                <li>
+                                                    <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('172', '69');">
+                                                        Hide this stream
+                                                    </a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('172');">
+                                                        Delete post
+                                                    </a>
+                                                </li>
+
+
+
+
+
+                                            </ul>
+
+                                        </div>
+
+
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a href="/demo/profile" class="joms-stream__user">demo</a>
+                                                added a new event        <span class="joms-stream__time">
+                                                    <small>
+                                                        2 years ago
+                                                    </small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="joms-stream__body">
+
+                                            <div class="joms-media">
+                                                <h4 class="joms-text--title"><a href="/jomsocial/all-events/viewevent/5-socialize-version-4-for-jomsocial-4-launch-party">Socialize Version 4 For JomSocial 4 Launch Party</a></h4>
+                                                <p>The new version of Socialize is almost ready!</p>
+                                                <ul class="joms-list">
+                                                    <li class="joms-list__item">
+                                                        
+                                                            
+                                                        
+                                                        Monday, 21 March 2016 12:00 AM
+                                                    </li>
+                                                    <li class="joms-list__item">
+                                                        
+                                                            <use xlink:href="http://socialize.jomsocial.com/#joms-icon-location"></use>
+                                                        
+                                                        Your Place
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('172');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-172" data-id="172">
+
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-171 " data-stream-id="171" data-stream-type="photos">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream ">
+                                                <a href="/83-paul/profile">
+                                                    <img data-author="83" src="/Content/client/images/avatar/thumb_ac60bfaf953aea9f068fb06c.jpg" alt="Paul">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a class="joms-stream__user" href="/83-paul/profile">Paul</a>
+
+                                                shared 2 photos in the <a href="javascript:" onclick="joms.api.photoOpen('24', '');">Paul's photos</a> album
+                                                <span class="joms-stream__time">
+                                                    <small>2 years ago </small>
+
+                                                    <svg viewBox="0 0 16 16" class="joms-icon joms-show-earth">
+                                                        
+                                                    
+                                                </span>
+                                            </div>
+
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamReport('171');">
+                                                            Report
+                                                        </a>
+                                                    </li>
+                                                    <li class="separator"></li>
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('171', '83');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+
+
+                                            <p><span class="joms-js--stream-text-171">Jomsocial 3.3 Sneak Peak - <i class="joms-emoticon joms-emo-excited"></i> <b>feeling excited</b></span></p>
+
+
+                                            <div class="joms-media--images">
+                                                <a href="javascript:" onclick="joms.api.photoOpen('24', '70');">
+                                                    <img src="/Content/client/images/photos/83/24/a49b923ec79a05ab0eb86b31.png" alt="js331">
+                                                </a>
+                                                <a href="javascript:" onclick="joms.api.photoOpen('24', '71');">
+                                                    <img src="/Content/client/images/photos/83/24/d114aaf8a53981799c181fb0.jpg" alt="js33">
+                                                </a>
+                                            </div>
+
+                                            <div class="joms-media--loading">
+                                                <div class="cEmpty small joms-rounded">
+                                                    Photos are being loaded.
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('171');">
+                                                <span class="joms-comment__counter--171">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('171');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+
+                                            <a class="joms-button--share" href="javascript:" onclick="joms.api.streamShare('171');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-redo"></use>
+                                                
+                                                <span>Share</span>
+                                            </a>
+
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-171" data-id="171">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-171" data-id="171">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="171"
+                                                          data-tag-func="album" data-tag-id="24" placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-170 " data-stream-id="170" data-stream-type="photos">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream ">
+                                                <a href="/83-paul/profile">
+                                                    <img data-author="83" src="/Content/client/images/avatar/thumb_ac60bfaf953aea9f068fb06c.jpg" alt="Paul">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+                                                <a class="joms-stream__user" href="/83-paul/profile">Paul</a>
+
+                                                shared a photo.
+                                                <span class="joms-stream__time">
+                                                    <small>2 years ago </small>
+
+                                                    <svg viewBox="0 0 16 16" class="joms-icon joms-show-earth">
+                                                        
+                                                    
+                                                </span>
+                                            </div>
+
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamReport('170');">
+                                                            Report
+                                                        </a>
+                                                    </li>
+                                                    <li class="separator"></li>
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('170', '83');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-stream__body">
+
+
+                                            <p>
+                                                <span class="joms-js--stream-text-170">
+                                                    The new version of Publisher will blow your mind. <br />
+                                                    <br />
+                                                    Social Sharing done in a perfect way! Multiple improvements. Everything is done how it's supposed...
+                                                </span><span class="joms-js--stream-textfull-170" style="display:none">
+                                                    The new version of Publisher will blow your mind. <br />
+                                                    <br />
+                                                    Social Sharing done in a perfect way! Multiple improvements. Everything is done how it's supposed to be.<br />
+                                                    <br />
+                                                    And of course there's that amazing JomSocial-Publisher integration. That allows you to have an active community where writers and readers can interact.<br />
+                                                    <br />
+                                                    Read more here: <a rel="nofollow" href="http://publisher.ijoomla.com/blog/publisher-3-0-10/">publisher.ijoomla.com/blog/publisher-3-0-10/</a>
+                                                </span>
+                                                <a href="javascript:" class="joms-js--stream-texttoggle-170"
+                                                   data-lang-more="Show more"
+                                                   data-lang-less="Show less"
+                                                   onclick="joms.api.streamToggleText(170);">Show more</a>
+                                            </p>
+
+
+                                            <a href="javascript:" onclick="joms.api.photoOpen('24', '69');">
+                                                <div class="joms-media--image">
+                                                    <img src="/Content/client/images/photos/83/24/6aa6ce76e7c4623c604ad982.png" alt="publisher" />
+                                                </div>
+                                            </a>
+
+
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('170');">
+                                                <span class="joms-comment__counter--170">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('170');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+
+                                            <a class="joms-button--share" href="javascript:" onclick="joms.api.streamShare('170');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-redo"></use>
+                                                
+                                                <span>Share</span>
+                                            </a>
+
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-170" data-id="170">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-170" data-id="170">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="170"
+                                                          data-tag-func="photo" data-tag-id="69" placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-160 " data-stream-id="160" data-stream-type="profile">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+
+                                                <a href="/demo/profile" data-joms-username class="joms-stream__user active">demo</a>
+
+                                                <a href="/demo/profile?actid=160">
+                                                    <span class="joms-stream__time">
+                                                        <small>3 years ago </small>
+
+                                                        <svg viewBox="0 0 16 16" class="joms-icon joms-show-earth">
+                                                            
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamSelectPrivacy('160');">
+                                                            Privacy Setting
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('160', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamEdit('160', this);">
+                                                            Edit post
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('160');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemoveMood('160');">
+                                                            Remove Mood
+                                                        </a>
+                                                    </li>
+
+
+                                                </ul>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="joms-stream__body">
+
+                                            <div data-type="stream-editor" class="cStream-Respond" style="display:none">
+                                                <textarea class="joms-textarea" style="margin-bottom:0">Socialize + JomSocial 3.2 = wow!</textarea>
+                                                <div style="text-align:right;">
+                                                    <button class="joms-button--neutral joms-button--small" onclick="joms.view.stream.cancel('160');">Cancel</button>&nbsp;
+                                                    <button class="joms-button--primary joms-button--small" onclick="joms.view.stream.save('160', this);">Save</button>
+                                                </div>
+                                            </div>
+
+                                            <p data-type="stream-content">
+                                                <span class="joms-js--stream-text-160">Socialize + JomSocial 3.2 = wow! - <i class="joms-emoticon joms-emo-excited"></i> <b>feeling excited</b></span>
+                                            </p>
+
+                                            <!-- Fetched data -->
+
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('160');">
+                                                <span class="joms-comment__counter--160">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('160');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-160" data-id="160">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-160" data-id="160">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="160"
+                                                          placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-158 " data-stream-id="158" data-stream-type="profile">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream ">
+                                                <a href="/72-/profile">
+                                                    <img data-author="72" src="/Content/client/images/avatar/thumb_0e4f0ca12c46741f9d4517ef.jpg" alt="Dimas">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+
+                                                <a href="/72-/profile" data-joms-username class="joms-stream__user active">Dimas</a>
+
+                                                <a href="/72-/profile?actid=158">
+                                                    <span class="joms-stream__time">
+                                                        <small>3 years ago </small>
+
+                                                        <svg viewBox="0 0 16 16" class="joms-icon joms-show-earth">
+                                                            
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamReport('158');">
+                                                            Report
+                                                        </a>
+                                                    </li>
+                                                    <li class="separator"></li>
+
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('158', '72');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.userIgnore('72');">
+                                                            Hide all from Dimas
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="joms-stream__body">
+
+                                            <div data-type="stream-editor" class="cStream-Respond" style="display:none">
+                                                <textarea class="joms-textarea" style="margin-bottom:0">Welcome to our demo!</textarea>
+                                                <div style="text-align:right;">
+                                                    <button class="joms-button--neutral joms-button--small" onclick="joms.view.stream.cancel('158');">Cancel</button>&nbsp;
+                                                    <button class="joms-button--primary joms-button--small" onclick="joms.view.stream.save('158', this);">Save</button>
+                                                </div>
+                                            </div>
+
+                                            <p data-type="stream-content">
+                                                <span class="joms-js--stream-text-158">Welcome to our demo! - <i class="joms-emoticon joms-emo-happy"></i> <b>feeling happy</b></span>
+                                            </p>
+
+                                            <!-- Fetched data -->
+
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('158');">
+                                                <span class="joms-comment__counter--158">0</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('158');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+
+                                            <a class="joms-button--share" href="javascript:" onclick="joms.api.streamShare('158');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-redo"></use>
+                                                
+                                                <span>Share</span>
+                                            </a>
+
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-158" data-id="158">
+
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-158" data-id="158">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="158"
+                                                          placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="joms-stream joms-embedly--left joms-js--stream joms-js--stream-157 " data-stream-id="157" data-stream-type="profile">
+                                        <div class="joms-stream__header">
+                                            <div class="joms-avatar--stream joms-online">
+                                                <a href="/demo/profile">
+                                                    <img data-author="69" src="/Content/client/images/avatar/thumb_7e1aefed8ac11ed92f4f2746.jpg" alt="demo">
+                                                </a>
+                                            </div>
+                                            <div class="joms-stream__meta">
+
+                                                <a href="/demo/profile" data-joms-username class="joms-stream__user active">demo</a>
+
+                                                <a href="/demo/profile?actid=157">
+                                                    <span class="joms-stream__time">
+                                                        <small>3 years ago </small>
+
+                                                        <svg viewBox="0 0 16 16" class="joms-icon joms-show-earth">
+                                                            
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+
+
+                                            <div class="joms-list__options">
+
+                                                <a href="javascript:" class="joms-button--options" data-ui-object="joms-dropdown-button">
+                                                    
+                                                        
+                                                    
+                                                </a>
+
+                                                <ul class="joms-dropdown">
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamSelectPrivacy('157');">
+                                                            Privacy Setting
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamHide('157', '69');">
+                                                            Hide this stream
+                                                        </a>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamEdit('157', this);">
+                                                            Edit post
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:" data-propagate="1" onclick="joms.api.streamRemove('157');">
+                                                            Delete post
+                                                        </a>
+                                                    </li>
+
+
+
+
+
+                                                </ul>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="joms-stream__body">
+
+                                            <div data-type="stream-editor" class="cStream-Respond" style="display:none">
+                                                <textarea class="joms-textarea" style="margin-bottom:0">https://vimeo.com/90941396</textarea>
+                                                <div style="text-align:right;">
+                                                    <button class="joms-button--neutral joms-button--small" onclick="joms.view.stream.cancel('157');">Cancel</button>&nbsp;
+                                                    <button class="joms-button--primary joms-button--small" onclick="joms.view.stream.save('157', this);">Save</button>
+                                                </div>
+                                            </div>
+
+                                            <p data-type="stream-content">
+                                                <span class="joms-js--stream-text-157"><a rel="nofollow" href="https://vimeo.com/90941396">vimeo.com/90941396</a></span>
+                                            </p>
+
+                                            <!-- Fetched data -->
+
+
+
+                                            <a href="http://vimeo.com/90941396" class="embedly-card" data-card-controls="0" data-card-recommend="0" data-card-theme="light" data-card-align="left">Loading content, please wait.</a>
+                                        </div>
+
+
+                                        <div class="joms-stream__status--mobile">
+
+
+
+                                            <a href="javascript:" onclick="joms.api.streamShowComments('157');">
+                                                <span class="joms-comment__counter--157">1</span>
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-bubble"></use>
+                                                
+                                            </a>
+
+
+                                        </div>
+
+                                        <div class="joms-stream__actions">
+
+                                            <!-- liked -->
+                                            <a href="javascript:"
+                                               class="joms-button--liked"
+                                               data-lang-like="Like"
+                                               data-lang-unlike="Unlike"
+                                               onclick="joms.api.streamLike('157');">
+                                                
+                                                    <use xlink:href="http://socialize.jomsocial.com/#joms-icon-thumbs-up"></use>
+                                                
+                                                <span>Like</span>
+                                            </a>
+
+                                            <!-- share -->
+
+                                        </div>
+
+
+
+                                        <div class="joms-comment joms-js--comments joms-js--comments-157" data-id="157">
+
+
+                                            <div class="joms-comment__item joms-js--comment joms-js--comment-6" data-id="6" data-parent="157" data-comment-id="6">
+                                                <div class="joms-comment__header">
+                                                    <div class="joms-avatar--comment ">
+                                                        <a href="/72-/profile">
+                                                            <img src="/Content/client/images/avatar/thumb_0e4f0ca12c46741f9d4517ef.jpg" alt="Dimas" data-author="72">
+                                                        </a>
+                                                    </div>
+                                                    <div class="joms-comment__body joms-js--comment-body">
+                                                        <a class="joms-comment__user" href="/72-/profile">Dimas</a>
+                                                        <span class="joms-js--comment-content">
+                                                            <span class="joms-js--comment-text-6">
+                                                                Love it <i class="joms-icon-smiley2 joms-status-emoticon"></i><br />
+                                                            </span>
+                                                        </span>
+
+                                                        <span class="joms-comment__time"><small>3 years ago </small></span>
+
+                                                        <div class="joms-comment__actions joms-js--comment-actions">
+
+                                                            <a class="joms-button--liked" href="javascript:" onclick="joms.api.commentLike('6');"
+                                                               data-lang-like="Like"
+                                                               data-lang-unlike="Unlike">
+                                                                
+                                                                    <use xlink:href="#joms-icon-thumbs-up"></use>
+                                                                
+                                                                <span>Like</span>
+                                                            </a>
+
+
+
+
+                                                            <a href="javascript:" class="joms-button--remove" onclick="joms.api.commentRemove('6');">
+                                                                <use xlink:href="#joms-icon-remove"></use>
+                                                                <span>Remove</span>
+                                                            </a>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="joms-comment__reply joms-js--comment-editor">
+                                                    <div class="joms-textarea__wrapper" style="display:block">
+                                                        <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                        <textarea class="joms-textarea" name="comment" data-id="6" data-edit="1"
+                                                                  placeholder="Add a comment">
+                                                            Love it :)
+                                                        </textarea>
+                                                        <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                        <div class="joms-textarea joms-textarea__attachment" data-no_thumb="1">
+                                                            <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                            <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                            <div class="joms-textarea__attachment--thumbnail">
+                                                                <img src="#" alt="Attachment">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);" style="right:24px">
+                                                        
+                                                    
+                                                    <div style="text-align:right;margin-top:4px">
+                                                        <button class="joms-button--small joms-button--neutral" onclick="joms.view.comment.cancel('6');">Cancel</button>
+                                                        <button class="joms-button--small joms-button--primary joms-js--btn-send">Send</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="joms-comment__reply joms-js--newcomment joms-js--newcomment-157" data-id="157">
+                                            <div class="joms-textarea__wrapper">
+                                                <div class="joms-textarea joms-textarea__beautifier"></div>
+                                                <textarea class="joms-textarea" name="comment" data-id="157"
+                                                          placeholder="Add a comment"></textarea>
+                                                <div class="joms-textarea__loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                <div class="joms-textarea joms-textarea__attachment">
+                                                    <button onclick="joms.view.comment.removeAttachment(this);">×</button>
+                                                    <div class="joms-textarea__attachment--loading"><img src="/Content/client/components/com_community/assets/ajax-loader.gif" alt="loader"></div>
+                                                    <div class="joms-textarea__attachment--thumbnail"><img src="#" alt="attachment"></div>
+                                                </div>
+                                            </div>
+                                            <svg viewBox="0 0 16 16" class="joms-icon joms-icon--add" onclick="joms.view.comment.addAttachment(this);">
+                                                
+                                            
+                                            <span>
+                                                <button class="joms-button--comment joms-js--btn-send">
+                                                    Send
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- end: .joms-stream__container -->
+
+
+                                <div class="joms-stream__loadmore cActivity-LoadMore" id="activity-more">
+                                    <a class="more-activity-text joms-button--primary joms-button--full" href="javascript:" onclick="joms.api.streamsLoadMore();">More</a>
+                                    <div class="loading"></div>
+                                </div>
+
+                                <script>
+        joms_infinitescroll = +'1';
+        joms_autoloadtrigger = +'100';
+        joms_enable_refresh = +'1';
+                                </script>
+
+
+                                <script>joms_adagency = 1;</script>
+
+                            </div>
+                            <!-- end: .joms-stream__wrapper -->
+                        </div>
+
+                    </div>
+                </div>
+
+                
+
+
+
